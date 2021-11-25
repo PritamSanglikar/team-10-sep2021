@@ -1,0 +1,118 @@
+1. Create the table SEMP with the following structure:-
+	EMPNO CHAR(4)
+	EMPNAME CHAR(20)
+	BASIC FLOAT
+	DEPTNO CHAR(2)
+	DEPTHEAD CHAR(4)
+
+--> 	create table SEMP
+	(EMPNO CHAR(4),EMPNAME char(20),BASIC flaot,
+	DEPTNO char(2),DEPTHEAD char(4));
+
+------------------------------------------------------------
+
+2. Create the table SDEPT with the following structure:-
+	DEPTNO CHAR(2)
+	DEPTNAME CHAR(15)
+
+
+-->	create SDEPT
+	(DEPTNO char(2),DEPTNAME char(15));
+
+------------------------------------------------------------
+
+3.Insert into the SDEPT table the following values:-
+	10, Development
+	20, Training
+
+-->	insert into SDEPT(DEPTNO,DEPTNAME)
+	values('10','Development')
+		('20',Training');
+
+------------------------------------------------------------
+
+4. Insert into the SEMP table the following values:-
+	0001, SUNIL, 6000, 10
+	0002, HIREN, 8000, 20
+	0003, ALI, 4000, 10, 0001
+	0004, GEORGE, 6000, 0002
+
+
+
+-->	insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD) 
+	values('0001','SUNIL',6000,'10',null),
+	('0002','HIREN',8000,'20',null),
+	('0003','AIL',4000,'10',0001),
+	('0004','GEORGE',6000,null,0002);
+
+
+------------------------------------------------------------
+
+5. Display all the data from the S table.
+
+--> 	select * from S;
+
+------------------------------------------------------------
+
+6. Display only the S# and SNAME fields from the S table.
+
+--> 	select `S#`,Sname from S;
+
+------------------------------------------------------------
+
+7. Display the PNAME and COLOR from the P table for the CITY=”London”.
+
+-->	select Pname, Color from p where city = 'London';
+
+------------------------------------------------------------
+
+8. Display all the Suppliers from London.
+
+--> 	select * from s where city = 'London';
+
+------------------------------------------------------------
+
+9. Display all the Suppliers from Paris or Athens.
+
+--> 	select * from s where city = 'Paris' or city = 'Athens';
+
+------------------------------------------------------------
+
+10. Display all the Projects in Athens.
+
+-->	select * from j where city = 'Athens';
+
+
+------------------------------------------------------------------------------------
+
+11. Display all the Partnames with the weight between 12 and 14 (inclusive of both).
+
+--> 	select * from p where weight >= 12 and weight <= 12;
+
+------------------------------------------------------------------------------------
+
+12. Display all the Suppliers with a Status greater than or equal to 20.
+
+-->	select * from s where status >= 20;
+
+
+------------------------------------------------------------------------------------
+
+13. Display all the Suppliers except the Suppliers from London.
+
+-->	select * from s where city != 'london';
+
+------------------------------------------------------------------------------------
+
+14. Display only the Cities from where the Suppliers come from.
+
+-->	select city from s;
+
+------------------------------------------------------------------------------------
+
+15. Assuming that the Part Weight is in GRAMS, display the same in
+MILLIGRAMS and KILOGRAMS.
+
+-->	select weight as gram, weight*1000 as Milligram ,weight/1000 as kilogram from p; 
+
+------------------------------------------------------------------------------------
