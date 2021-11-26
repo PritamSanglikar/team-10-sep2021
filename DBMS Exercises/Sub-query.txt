@@ -1,0 +1,47 @@
+************subQuery*************
+
+1. select employee having  same salary as 'Arun'.
+
+-->	select emp_name from emp6
+	where salary =
+	(select salary from emp6
+	where emp_name = 'Arun' );
+
+------------------------------------------------------
+
+2. select employee belonging to same dept as 'jack'.
+
+-->	select emp_name,dept_id from emp6
+	where dept_id =  
+ 	(select dept_id from emp6
+	 where emp_name = 'Jack' );
+
+------------------------------------------------------
+
+3. select name of employee havin lowest salary.
+
+-->	select emp_name,salary from emp6
+	where salary = 
+	(select min(salary) from emp6
+	); 
+
+------------------------------------------------------
+
+update salary =15000 of employees belonging to same dept as 'Max'.
+
+-->	update emp6 set salary = 15000
+	where dept_id = 
+	(select tempp.dept_id from 
+	(select dept_id from emp6
+	where emp_name = 'Max') as tempp);
+
+------------------------------------------------------
+
+
+
+
+select emp_no, emp_name from emp1
+ where emp1.emp_no = emp2.emp_no
+union
+select emp_no, emp_name from  emp2
+where emp1.emp_no = emp2.emp_no;
