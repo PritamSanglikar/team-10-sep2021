@@ -27,7 +27,7 @@
 
 ------------------------------------------------------
 
-update salary =15000 of employees belonging to same dept as 'Max'.
+4. update salary =15000 of employees belonging to same dept as 'Max'.
 
 -->	update emp6 set salary = 15000
 	where dept_id = 
@@ -36,12 +36,3 @@ update salary =15000 of employees belonging to same dept as 'Max'.
 	where emp_name = 'Max') as tempp);
 
 ------------------------------------------------------
-
-
-
-
-select emp_no, emp_name from emp1
- where emp1.emp_no = emp2.emp_no
-union
-select emp_no, emp_name from  emp2
-where emp1.emp_no = emp2.emp_no;
