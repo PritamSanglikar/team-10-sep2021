@@ -1,0 +1,50 @@
+***********order by
+
+1. select all from authors sort ascending by author name.
+
+-->	select * from emp5
+	group by dept_id;
+
+------------------------------------------------------------------------------
+2. select all from publishers sort descending by publisher name.
+
+-->	select emp_name from emp5
+	order by emp_name desc;
+
+------------------------------------------------------------------------------
+
+***********group by
+1. select all data and sum of salary from employee and group according to deptid
+
+
+-->	select empid,emp_name,dept_id,salary,manager,sum(salary) from emp5
+	group by dept_id;
+
+------------------------------------------------------------------------------
+
+2. select deptid and sum of salary where salary is greater than 17000 and group by deptid.
+
+-->	select dept_id,sum(salary) from emp5
+	where salary < 17000
+	group by dept_id;
+
+------------------------------------------------------------------------------
+
+*********having
+
+
+1. select deptid and sum of salary where sum of salary is greater than 18000 and grup by deptid.  
+
+--> 	select dept_id,sum(salary) from emp5
+	group by dept_id
+	having sum(salary)> 18000;
+
+------------------------------------------------------------------------------
+
+2. select deptid and sum of salary where sum of salary is less than 20000 and grup by deptid.
+
+--> select dept_id,sum(salary) from emp5
+group by dept_id
+having sum(salary)< 20000;
+
+------------------------------------------------------------------------------
